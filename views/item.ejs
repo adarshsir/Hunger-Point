@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <link rel="stylesheet" href="/css/item.css">
+</head>
+<body >
+    <div class="container">
+        <% for(food of foods){ %>
+        <div class="product">
+            <h1>Product details are -:</h1>
+            <div class="image">
+                <img src="/images/<%= food.item_img %>" alt="product image">
+            </div>
+            <h2>Product name is: <%= food.item %></h2>
+            <h2>Product price is: <%= food.price %></h2>
+            <form method="post" action="/user/<%= food.Food_id%>/item">
+                <button>Buy</button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>

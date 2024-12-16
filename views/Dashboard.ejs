@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Dashboard.css">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <section class="menu">
+        <div class="nav">
+            <div class="logo">
+                <img src="/images/HungerPoint.jpg" alt="logo" style="border-radius: 50%;">
+            </div>
+            <ul>
+                
+
+                <li><i class="fa-solid fa-house"></i><a href="/dashboard">Home</a></li>
+                <li><i class="fa-solid fa-bars"></i><a href="#">Menu</a></li>
+                <li><i class="fa-solid fa-cart-shopping"></i><a href="#">Cart</a></li>
+                <li><i class="fa-solid fa-envelope"></i><a href="#">Offers</a></li>
+                <li><a href="user/about">About us</a></li>
+            </ul>
+            
+            <div class="sign">
+                <input class="signin" type="Submit" value="Sign In" name="signin" onclick = "window.location.href='/login'">
+                <input class="signup" type="Submit" value="Sign Up" name="signup" onclick = "window.location.href='/user/new'">
+                
+                
+            </div>
+        </div>
+
+       
+    </section>
+
+   
+
+
+    <!-- slide show -->
+
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 5</div>
+      <img src="/images/slideshow1.jpg" style="height:60%; width:100%;" >
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 5</div>
+      <img src="/images/slideshow2.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 5</div>
+      <img src="/images/slideshow3.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 5</div>
+      <img src="/images/slideshow4.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 5</div>
+      <img src="/images/slideshow5.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span>
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+
+    <section class="grid">
+        <div class="content">
+            <div class="content-left">
+                <div class="information">
+                    <h2>Hunger Point With <br> Kanhyavanshi-Groups ! <br>Have it...</h2>
+                    <p>Choose the Food What's on your Taste</p>
+                    
+                </div>
+                <div class="button button1">
+                    <button>Explore Varities</button>
+                </div>
+                
+                
+                
+            </div>   
+            <div class="content-right">
+            <img src="/images/rotating4.jpg" height="40" alt="Food">
+
+            </div>
+        </div>
+        <!-- <button>Explore Varities </button> -->
+        
+    </section>
+    
+                <br>
+                <div class="shop-section" style="cursor: pointer;">
+                    <% for(category of categories){ %>
+                    <div class="box1 box">
+                        <div class="box-content">
+                            <h2><%= category.item %></h2>
+                            <div class="box-img" style="background-image: url('/images/<%= category.item_img%>');" ></div>
+
+                            <form method="GET" action="/user/<%=category.item%>/item/">
+                                <button type="submit">See More</button> 
+                            </form>
+                        </div>
+                    </div>
+                    <% } %>
+
+
+
+
+                    <!-- <div class="box2 box">
+                        <div class="box-content">
+                        <h2>Jumboking Indian Burger</h2>
+                        <div class="box-img" style="background-image: url('/images/box2_image.jpg'); height: 270px;"></div>
+                        <form method="GET" action="/user/item">
+                            <button>See More</button> 
+                        </form>
+
+                    </div>
+
+                </div>
+                    <div class="box3 box">
+                        <div class="box-content">
+                            <h2> StarBucks Coffiee</h2>
+                            <div class="box-img" style="background-image: url('/images/box3_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                        </div>
+                    </div>
+                    <div class="box4 box">
+                        <div class="box-content">
+                            <h2>Punjabi Chole Bhature</h2>
+                            <div class="box-img" style="background-image: url('/images/box4_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                            
+                        </div>
+                    </div>
+
+
+                
+                    <div class="box5 box">
+                        <div class="box-content">
+                            <h2>Desi Kachori</h2>
+                            <div class="box-img" style="background-image: url('/images/box5_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                        </div>
+                    </div>
+                    <div class="box6 box">
+                        <div class="box-content">
+                        <h2>South Indian Dosa</h2>
+                        <div class="box-img" style="background-image: url('/images/box6_image.jpg');"></div>
+                        <form method="GET" action="/user/item">
+                            <button>See More</button> 
+                        </form>
+                    </div>
+                </div>
+                    <div class="box7 box">
+                        <div class="box-content">
+                            <h2>Hongs Chinese Kitchen</h2>
+                            <div class="box-img" style="background-image: url('/images/box7_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                        </div>
+                    </div>
+                    <div class="box8 box">
+                        <div class="box-content">
+                            <h2>Cakes</h2>
+                            <div class="box-img" style="background-image: url('/images/box8_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                        </div>
+                        <br>
+                    </div>
+                
+                    <div class="box9 box">
+                        <div class="box-content">
+                            <h2>Nano Duzi</h2>
+                            <div class="box-img" style="background-image: url('/images/box9_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+
+                        </div>
+                        
+                    </div>
+                    <br>
+                
+                    <div class="box10 box">
+                        <div class="box-content">
+                            <h2>The Pizza</h2>
+                            <div class="box-img" style="background-image: url('/images/box10_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="box11 box">
+                        <div class="box-content">
+                            <h2>Wraps & Rolls</h2>
+                            <div class="box-img" style="background-image: url('/images/box11_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                        </div>
+                        <br>
+                    </div>
+                
+                    <div class="box12 box">
+                        <div class="box-content">
+                            <h2>Punjabi chole</h2>
+                            <div class="box-img" style="background-image: url('/images/box12_image.jpg');"></div>
+                            <form method="GET" action="/user/item">
+                                <button>See More</button> 
+                            </form>
+                        </div>
+                    </div> -->
+                    
+                </div>
+                <br>
+
+            </div>
+        </div>
+    </section>
+    <br>
+    <footer >
+        <div class="foot-panel1" style="cursor: pointer;">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button>
+        </div>
+
+        <script>
+            // Get the button
+            let mybutton = document.getElementById("myBtn");
+            
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+            </script>
+        
+    
+        <div class="foot-panel2" style="cursor: pointer;">
+            <ul>
+                <h5>Get to know us</h5>
+                <p>About Us</p>
+                <p>Careers</p>
+                <p>Team</p>
+                <p>Amazon Science</p>
+                <p>Hunger One</p>
+                <p>Hunger Instamart</p>
+                <p>Hunger Genie</p>
+                
+            </ul>
+
+            <ul>
+                <h5>Contact us</h5>
+                <p>Help & Support</p>
+                <p>Partner with us</p>
+                <p>Partner with us</p>
+                <p>Ride with us</p>
+            </ul>
+    
+            <ul>
+                <h5>Connect with Us</h5>
+                <p><a href="https://www.facebook.com/shivani.chand.186/" style="color: beige; text-decoration: none;">Facebook</a></p>
+                <p>Twitter</p>
+
+                <p><a href="https://www.instagram.com/adarsh_kanhyavanshi/" style="color: beige; text-decoration: none;">Instagram</a> </p>
+                <p> <a href="https://www.youtube.com/@AV_VLOGGERS" style="color: beige; text-decoration: none;">Youtube</a></p>
+                
+            </ul>
+    
+            <ul>
+                <h5>We deliver to:</h5>
+                <p>Bangalore</p>
+                <p>Gurgaon</p>
+                <p>Hyderabad</p>
+                <p>Delhi</p>
+                <p>Mumbai</p>
+                <p>Pune</p>
+
+
+        
+            </ul>
+    
+            <ul>
+                <h5>Legal</h5>
+                <p>Terms & Conditions</p>
+                <p>Cookie Policy</p>
+                <p>Privacy Policy</p>
+                <p>Investor Relations</p>
+    
+            </ul>
+        </div>
+    
+        <div class="foot-panel3" style="cursor: pointer;">
+            <div class="logo">
+                <img src="/images/HungerPoint.jpg" alt="logo" style="border-radius: 50%;">
+            </div>
+        
+        </div>
+    
+        <div class="foot-panel4" style="cursor: pointer;">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a>Your Ads Privacy Choices</a>
+            </div>
+            <div class="copy-right">
+                <a>© 1996-2024, HungerPoint.com, Inc. or its affiliates</a><br>
+                <a>Devoloped by Kanhyavanshi-Groups</a>
+            </div>
+        </div>
+    
+    </footer>
+    
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+    
+</body>
+</html>

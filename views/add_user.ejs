@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+</head>
+<body style="background-color: rgb(224, 200, 121);">
+    
+    
+    <h2>Add new user</h2>
+
+    <!-- Form should point to your backend POST route for adding new users -->
+    <form action="/user/new" method="POST">
+        <!-- Input for user id -->
+        <input type="number" name="id" placeholder="Enter Id">
+        <br>
+        <br>
+
+        <!-- Input for username -->
+        <input type="text" name="username" placeholder="Enter username">
+        <br>
+        <br>
+        
+        <!-- Input for password -->
+        <input type="password" name="password" placeholder="Enter password">
+        <br>
+        <br>
+        
+        <!-- Input for email -->
+        <input type="email" name="email" placeholder="Enter email-id">
+        <br>
+        <br>
+        
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
